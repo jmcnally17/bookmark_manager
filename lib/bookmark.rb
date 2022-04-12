@@ -9,7 +9,7 @@ class Bookmark
     end
 
     result = connection.exec("SELECT * FROM bookmarks;")
-    result.map { |bookmark| "#{bookmark['title']}: #{bookmark['url']}" }
+    result.map { |bookmark| { title: bookmark['title'], link: bookmark['url'] } }
   end
 
   def self.create(link, title)

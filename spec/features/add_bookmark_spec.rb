@@ -4,7 +4,6 @@ feature "#create" do
     fill_in 'add', with: 'https://myspace.com/'
     fill_in 'title', with: 'MySpace'
     click_button 'Submit'
-    expect(page).to have_content "https://myspace.com/"
-    expect(page).to have_content 'MySpace'
+    expect(page).to have_link('MySpace', href: 'https://myspace.com/')
   end
 end
