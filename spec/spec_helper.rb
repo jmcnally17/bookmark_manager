@@ -1,6 +1,11 @@
+ENV['ENVIRONMENT'] = 'test'
+
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative './features/web_helper_spec'
+require_relative './setup_test_database'
+require 'pg'
 
 ENV['RACK_ENV'] = 'test'
 
@@ -33,6 +38,11 @@ SimpleCov.start
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+    add_bookmarks
+  end  
+
   config.after(:suite) do
     puts
     puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"

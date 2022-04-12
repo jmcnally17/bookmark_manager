@@ -1,6 +1,7 @@
 require_relative '../lib/bookmark'
 
 describe Bookmark do
+ 
   context 'when created' do
     it 'has a name' do
       expect(subject).to be_instance_of(Bookmark)
