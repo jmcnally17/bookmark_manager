@@ -11,16 +11,14 @@ describe Bookmark do
 
   context '#all' do
     it 'returns all bookmarks' do
-      expect(bookmarks).to include('http://www.makersacademy.com')
-      expect(bookmarks).to include('http://www.destroyallsoftware.com')
-      expect(bookmarks).to include('http://www.google.com')
+      expect(bookmarks).to include("Makers", "Destroy", "Google")
     end
   end
 
   context "#create" do
     it "adds a bookmark to the bookmark manager" do
-      Bookmark.create('https://myspace.com')
-      expect(bookmarks).to include "https://myspace.com"
+      Bookmark.create('https://myspace.com', "MySpace")
+      expect(bookmarks).to include("MySpace")
     end
   end
 end
