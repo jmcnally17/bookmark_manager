@@ -18,6 +18,21 @@ graph TD
     B[Bookmarks] -->C[view_all]
 ```
 
+`As a user
+So I can save a new bookmark
+I would like to add the bookmark to the bookmark manager`
+
+|  Objects        |  Messages      |
+| ----------      | -------------  | 
+| User |                        |
+| Bookmark |      create    |
+
+```mermaid
+graph TD
+    A[User] -->B[Bookmark]
+    B[Bookmark] -->C[create]
+```
+
 Database Setup
 -----
 
